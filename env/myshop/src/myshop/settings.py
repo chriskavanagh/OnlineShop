@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'shop',
     'crispy_forms',
     'cart',
+    'orders',
+    'paypal.standard.ipn',
+    'payment',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -69,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart'
             ],
         },
     },
@@ -119,6 +123,19 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = 'ckava3@aol.com'
+PAYPAL_TEST = True
+
+
+# Email Settings
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Static files (CSS, JavaScript, Images)

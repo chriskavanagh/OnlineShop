@@ -23,8 +23,13 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
+    # cart app
     url(r'^cart/', include('cart.urls', namespace='cart')),
-    #url(r'^orders/', include('orders.urls', namespace='orders')),
+    # orders app
+    url(r'^orders/', include('orders.urls', namespace='orders')),
+    # PayPal app
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    # shop app
     url(r'^', include('shop.urls', namespace='shop')),
     
 ]
