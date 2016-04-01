@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, get_object_or_404
 from paypal.standard.forms import PayPalPaymentsForm
 from orders.models import Order
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -26,6 +27,15 @@ def payment_process(request):
     form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'payment/process.html', {'order': order, 'form':form})
     
+    
+@csrf_exempt
+def payment_done(request):
+    return render(request, 'payment/done.html')
+    
+
+@csrf_exempt
+def payment_canceled(request):
+    return render(request, 'payment/canceled.html')
     
 
  

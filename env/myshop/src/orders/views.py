@@ -25,5 +25,5 @@ def order_create(request):
             redirect(reverse('payment:process'))
     else:
         form = OrderCreateForm()
-        context = {'cart': cart, 'form': form}
+    context = {'cart': cart, 'form': form}
     return render(request, 'orders/order/create.html', context)
