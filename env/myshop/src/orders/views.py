@@ -22,7 +22,7 @@ def order_create(request):
             order_created.delay(order.id)    # launch asynchronous task
             request.session['order_id'] = order.id
             #context = {'order': order}
-            redirect(reverse('payment:process'))
+            return redirect(reverse('payment:process'))
     else:
         form = OrderCreateForm()
     context = {'cart': cart, 'form': form}
