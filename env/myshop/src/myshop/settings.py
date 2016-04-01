@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 # cart session key
 CART_SESSION_ID = 'cart'
 
-
 # Application definition
 
 INSTALLED_APPS = [

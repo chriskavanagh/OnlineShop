@@ -30,8 +30,7 @@ def payment_process(request):
     
 @csrf_exempt
 def payment_done(request):
-    return render(request, 'payment/done.html')
-    
+    return render(request, 'payment/done.html')    
 
 @csrf_exempt
 def payment_canceled(request):
