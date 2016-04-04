@@ -31,9 +31,11 @@ urlpatterns = [
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
     # payment app
     url(r'^payment/', include('payment.urls', namespace='payment')),
+    # coupon app
+    url(r'^coupons/', include('coupons.urls', namespace='coupons')),
     # shop app
-    url(r'^', include('shop.urls', namespace='shop')),    
-    
+    url(r'^', include('shop.urls', namespace='shop')),
+
 ]
 
 
