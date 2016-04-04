@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'coupons',
+    'imagekit'
 ]
 
 MIDDLEWARE_CLASSES = [

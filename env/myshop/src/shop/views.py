@@ -6,7 +6,6 @@ from cart.forms import CartAddProductForm
 
 # Create your views here.
 def product_list(request, category_slug=None):
-    #cart = Cart(request)
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
@@ -15,7 +14,7 @@ def product_list(request, category_slug=None):
         products = products.filter(category=category)
     context = {'category': category, 'categories': categories, 'products': products}
     return render(request, 'shop/products/list.html', context)
-
+    
 
 def product_detail(request, id, slug):
     #cart = Cart(request)
@@ -23,10 +22,9 @@ def product_detail(request, id, slug):
     cart_product_form = CartAddProductForm()
     context = {'product': product, 'cart_product_form': cart_product_form}
     return render(request, 'shop/products/detail.html', context)
-    
-    
-    
-    
-    
+
+
+
+
+
 # Using custom 'cart.context_processors.cart' in settings to add Cart info to Templates
-    
